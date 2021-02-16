@@ -1,6 +1,13 @@
 import React, { useReducer } from "react";
 import reducer, { initialState } from "./reducers/index";
-import { applyNumber, changeOperation, clearDisplay } from "./actions/index";
+import {
+  applyNumber,
+  changeOperation,
+  clearDisplay,
+  memoryAdd,
+  memoryReset,
+  memoryClear,
+} from "./actions/index";
 import "./App.css";
 
 import TotalDisplay from "./components/TotalDisplay";
@@ -19,6 +26,18 @@ function App() {
 
   const handleClearDisplay = () => {
     dispatch(clearDisplay(0));
+  };
+
+  const handleMemoryAdd = () => {
+    dispatch(memoryAdd(state.total));
+  };
+
+  const handleMemoryReset = () => {
+    dispatch(memoryReset(state.memory));
+  };
+
+  const handleMemoryClear = () => {
+    dispatch(memoryClear(0));
   };
 
   return (
@@ -44,9 +63,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton value={"M+"} onClick={() => handleMemoryAdd()} />
+              <CalcButton value={"MR"} onClick={() => handleMemoryReset()} />
+              <CalcButton value={"MC"} onClick={() => handleMemoryClear()} />
             </div>
             {/* // SET NUM = RESPECTIVE NUMBER */}
             <div className="row">

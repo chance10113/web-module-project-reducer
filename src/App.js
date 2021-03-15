@@ -27,30 +27,28 @@ function App() {
               <CalcButton value={"M+"}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
+              <CalcButton value={"+"}/>
             </div>
 
             <div className="row">
               <CalcButton value={1}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
+              <CalcButton value={"-"}/>
             </div>
 
             <div className="row">
               <CalcButton value={4}/>
               <CalcButton value={5}/>
               <CalcButton value={6}/>
+              <CalcButton value={"*"}/>
             </div>
 
             <div className="row">
               <CalcButton value={7}/>
               <CalcButton value={8}/>
               <CalcButton value={9}/>
-            </div>
-
-            <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"/"}/>
             </div>
 
             <div className="row ce_button">
